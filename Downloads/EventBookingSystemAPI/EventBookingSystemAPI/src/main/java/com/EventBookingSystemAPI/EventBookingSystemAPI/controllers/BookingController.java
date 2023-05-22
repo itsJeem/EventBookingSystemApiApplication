@@ -7,7 +7,7 @@ import com.EventBookingSystemAPI.EventBookingSystemAPI.services.BookingService;
 import com.EventBookingSystemAPI.EventBookingSystemAPI.services.EventService;
 import com.EventBookingSystemAPI.EventBookingSystemAPI.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
@@ -21,25 +21,33 @@ public class BookingController {
     BookingService bookingService;
 
     @PostMapping("/createNewBooking")
+/*
     @PreAuthorize("hasRole('USER')")
+*/
     public Booking createBooking(@RequestParam Integer eventId, @RequestParam Integer userId, @RequestParam int numberOfTickets) {
     return bookingService.createBooking(eventId, userId, numberOfTickets);
     }
 
     @GetMapping("/getUserBookings")
+/*
     @PreAuthorize("hasRole('USER')")
+*/
     public List<Booking> getUserBookings(@RequestParam("userId") Integer userId) {
         return bookingService.getBookingsByUserId(userId);
     }
 
     @DeleteMapping("/cancelBooking")
+/*
     @PreAuthorize("hasRole('USER')")
+*/
     public void deleteBooking(@RequestParam("bookingId") Integer bookingId) {
         bookingService.deleteBooking(bookingId);
     }
 
     @GetMapping("/getAllBookings")
+/*
     @PreAuthorize("hasRole('USER')")
+*/
     public List<Booking> getAllBookings() {
         return bookingService.getAllBookings();
     }

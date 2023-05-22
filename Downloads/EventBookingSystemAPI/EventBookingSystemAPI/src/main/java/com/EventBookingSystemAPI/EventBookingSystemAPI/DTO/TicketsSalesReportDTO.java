@@ -14,7 +14,6 @@ public class TicketsSalesReportDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String eventName;
     private Date date;
     private String location;

@@ -11,16 +11,16 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface TicketSalesReportRepository extends JpaRepository<TicketsSalesReportDTO, Integer> {
-
-
-    @Query("SELECT new com.example.dto.TicketSalesReportDTO(e.name, e.date, e.location, COUNT(b.id)) " +
-            "FROM Event e LEFT JOIN Booking b ON e.id = b.eventId " +
-            "WHERE e.date BETWEEN :startDate AND :endDate " +
-            "GROUP BY e.id")
-    List<TicketsSalesReportDTO> getTicketSalesReportData(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
-
-
-
-    List<TicketsSalesReportDTO> findTicketSalesReportData(Date startDate, Date endDate);
+public interface TicketSalesReportRepository {
+// extends JpaRepository<TicketsSalesReportDTO, Integer>
+//
+//    @Query("SELECT new com.example.dto.TicketSalesReportDTO(e.name, e.date, e.location, COUNT(b.id)) " +
+//            "FROM Event e LEFT JOIN Booking b ON e.id = b.eventId " +
+//            "WHERE e.date BETWEEN :startDate AND :endDate " +
+//            "GROUP BY e.id")
+//    List<TicketsSalesReportDTO> getTicketSalesReportData(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
+//
+//
+//
+//    List<TicketsSalesReportDTO> findTicketSalesReportData(Date startDate, Date endDate);
 }
