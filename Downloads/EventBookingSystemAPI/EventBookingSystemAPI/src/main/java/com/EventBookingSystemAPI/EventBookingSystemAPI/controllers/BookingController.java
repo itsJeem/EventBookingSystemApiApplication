@@ -27,16 +27,19 @@ public class BookingController {
     }
 
     @GetMapping("/getUserBookings")
+    @PreAuthorize("hasRole('USER')")
     public List<Booking> getUserBookings(@RequestParam("userId") Integer userId) {
         return bookingService.getBookingsByUserId(userId);
     }
 
     @DeleteMapping("/cancelBooking")
+    @PreAuthorize("hasRole('USER')")
     public void deleteBooking(@RequestParam("bookingId") Integer bookingId) {
         bookingService.deleteBooking(bookingId);
     }
 
     @GetMapping("/getAllBookings")
+    @PreAuthorize("hasRole('USER')")
     public List<Booking> getAllBookings() {
         return bookingService.getAllBookings();
     }
