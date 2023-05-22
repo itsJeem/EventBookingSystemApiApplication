@@ -43,4 +43,8 @@ public class EventService {
     public List<Event> searchEventsBetweenDatesAndLocation(Date fromDate, Date toDate, String location) {
         return eventRepository.searchEventsBetweenDatesAndLocation(fromDate, toDate, location);
     }
+
+    public List<Event> getAllEvents() {
+        return eventRepository.getAllEvents();
+    }
 }

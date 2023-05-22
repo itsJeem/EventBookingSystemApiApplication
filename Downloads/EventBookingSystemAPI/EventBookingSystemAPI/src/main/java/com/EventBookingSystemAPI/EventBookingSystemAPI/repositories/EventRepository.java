@@ -22,4 +22,7 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
 
                                                     @Param("location") String location);
 
+    @Query(value = "Select e from Event e ")
+    List<Event> getAllEvents();
+
 }
